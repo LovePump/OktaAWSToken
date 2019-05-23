@@ -25,7 +25,7 @@ function SetAccount {
     } while ($selection -lt 1 -or $selection -gt ($account.account).count)
     $prop = @{
       organizationurl = $account.organizationurl
-      appurl          = $account.account[($selection - 1)].idp_url
+      appurl          = $account.account.idpurl
     }
     $oktaaccount = New-Object -TypeName psobject -Property $prop
     Write-Output $oktaaccount
